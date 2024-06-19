@@ -4,7 +4,7 @@ const router = express.Router()
 
 // auth login
 router.get('/login', (req, res) => {
-    res.render('login', { user: req.user });
+    res.render('login');
 });
 
 // auth logout
@@ -14,6 +14,8 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+
 
 router.get('/google/callback',
     passport.authenticate('google'),
